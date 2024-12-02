@@ -9,11 +9,13 @@ const permalink = Astro.site.href;
 <BaseLayout title={title} description={description} permalink={permalink}>
   <div class="home-container">
     <div class="home-copy">
-      <h1>Welcome to the Woah Machine</h1>
+      <h1 color="orange">Welcome to the Woah Machine</h1>
+      <p>Click the button to see actor Keanu Reeves' favorite phrase from all his films</p>
+      <p>Includes: movie poster, audio, and information about the usage</p>
     </div>
 
     <div class="hero-image-container">
-        <button id="generator-button">Generate Keanu</button>
+        <button class="btn btn-primary">Generate Keanu</button>
       
         <div id="meme-wrapper">
           <img width="600" id="random-meme" src="" />
