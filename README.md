@@ -1,33 +1,16 @@
-# [Astro](https://astro.build) Blog Template
+
+# This is my API project - it uses the keanu reeves woah API to play an audio clip and update content on the page, including the movie poster and nav bar background for every onclick action
+
+# Created using Astro and styled with Tailwind and DaisyUI
+
+## [Astro](https://astro.build) Blog Template
 
 [![Screenshot](screenshot.png)](https://astro-blog-template.netlify.app/)
 
-## 👉 Check out the ✨ [Live Demo](https://astro-blog-template.netlify.app/) ✨
-
-## 👩‍🚀 Getting Started
-
-### Locally
-
-```
-npm init astro -- --template Charca/astro-blog-template
-```
-
-### On StackBlitz
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/charca/astro-blog-template)
-
-## ✨ Features:
-
-- ✅ Astro 4.0
-- ✅ Dark Mode
-- ✅ Full Markdown support
-- ✅ SEO-friendly setup with canonical URLs and OpenGraph data
-- ✅ RSS 2.0 generation
-- ✅ Sitemap.xml generation
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Inside of the Astro project, you'll see the following folders and files:
 
 ```
 /
