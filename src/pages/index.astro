@@ -11,6 +11,7 @@ let heading=document.getElementById("random-caption");
 let button=document.querySelector("button");
 
 let audio=document.querySelector("audio");
+let caption=document.querySelector("figcaption");
 let backgroundImg=document.getElementsByClassName("background")[0] as HTMLImageElement;
 
 const url =`https://whoa.onrender.com/whoas/random`;
@@ -27,7 +28,9 @@ button.addEventListener("click", function(){
     console.log(keanuData[0].poster);
 
     keanuPoster.src=keanuData[0].poster;
-   audio.src=keanuData[0].audio; heading.innerText=keanuData[0].movie;
+   audio.src=keanuData[0].audio; 
+  // heading.innerText=keanuData[0].movie;
+  caption.innerText="";
   backgroundImg.style.backgroundImage = `url(${backgroundUrl})`;    
   });
 });
@@ -49,7 +52,7 @@ button.addEventListener("click", function(){
       
         <div id="meme-wrapper">
           <img width="600" class="moviePoster max-h-full" src="/assets/keanu_logo.png" />
-          
+          <figcaption>If the button isn't working, you may need to reload the page...</figcaption>
         </div>
             <h2 id="random-caption"></h2>
       
