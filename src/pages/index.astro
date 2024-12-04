@@ -5,25 +5,53 @@ const title = 'My Astro Blog';
 const description = 'The perfect starter for your perfect blog.';
 const permalink = Astro.site.href;
 ---
+<script>
+  let keanuPoster=document.getElementsByClassName("moviePoster")[0] as HTMLImageElement;
+let heading=document.getElementById("random-caption");
+let button=document.querySelector("button");
+
+let audio=document.querySelector("audio");
+let backgroundImg=document.querySelector("main");
+
+const url =`https://whoa.onrender.com/whoas/random`;
+console.log(url);
+const backgroundUrl =  `placekeanu.com/250`;
+console.log(backgroundUrl);
+button.addEventListener("click", function(){
+
+  fetch(url)
+  .then(response => response.json())
+  .then( keanuData => {
+    //check
+    console.log( keanuData );
+    console.log(keanuData[0].poster);
+
+    keanuPoster.src=keanuData[0].poster;
+   audio.src=keanuData[0].audio; heading.innerText=keanuData[0].movie;
+    
+  });
+});
+
+</script>
+
 
 <BaseLayout title={title} description={description} permalink={permalink}>
   <div class="home-container">
-    <div class="home-copy">
-      <h1 color="orange">Welcome to the Woah Machine</h1>
-      <p>Click the button to see actor Keanu Reeves' favorite phrase from all his films</p>
-      <p>Includes: movie poster, audio, and information about the usage</p>
+    <div class="main home-copy">
+      <h1 class="text-orange-500">Welcome to the Woah Machine</h1>
+      <button class="btn btn-primary justify-center items-center">Generate Keanu</button>
+      <p>Click the button to hear actor Keanu Reeves' favorite phrase from  his films</p>
     </div>
 
     <div class="hero-image-container">
-        <button class="btn btn-primary">Generate Keanu</button>
       
         <div id="meme-wrapper">
-          <img width="600" id="random-meme" src="" />
+          <img width="600" class="moviePoster" src="/assets/keanu_logo.png" />
           
         </div>
             <h2 id="random-caption"></h2>
       
-          <audio src="" controls autoplay></audio>
+          <audio class="hidden"src="" controls autoplay></audio>
       
     </div>
   </div>
