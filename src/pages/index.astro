@@ -11,11 +11,11 @@ let heading=document.getElementById("random-caption");
 let button=document.querySelector("button");
 
 let audio=document.querySelector("audio");
-let backgroundImg=document.querySelector("main");
+let backgroundImg=document.getElementsByClassName("background")[0] as HTMLImageElement;
 
 const url =`https://whoa.onrender.com/whoas/random`;
 console.log(url);
-const backgroundUrl =  `placekeanu.com/250`;
+const backgroundUrl =  `https://placekeanu.com/400`;
 console.log(backgroundUrl);
 button.addEventListener("click", function(){
 
@@ -28,7 +28,7 @@ button.addEventListener("click", function(){
 
     keanuPoster.src=keanuData[0].poster;
    audio.src=keanuData[0].audio; heading.innerText=keanuData[0].movie;
-    
+  backgroundImg.style.backgroundImage = `url(${backgroundUrl})`;    
   });
 });
 
@@ -36,17 +36,19 @@ button.addEventListener("click", function(){
 
 
 <BaseLayout title={title} description={description} permalink={permalink}>
-  <div class="home-container">
-    <div class="main home-copy">
-      <h1 class="text-orange-500">Welcome to the Woah Machine</h1>
-      <button class="btn btn-primary justify-center items-center">Generate Keanu</button>
+  <div class="home-container background bg-repeat">
+    <div class="home-copy">
+      <h1 class="text-orange-500 text-center">Welcome to the Woah Machine</h1>
+      <div class="flex justify-center items-center ">
+      <button class="flex pr-6 btn btn-accent btn-lg btn-wide btn-outline justify-center items-center">Generate Keanu</button>
+      </div>
       <p>Click the button to hear actor Keanu Reeves' favorite phrase from  his films</p>
     </div>
 
     <div class="hero-image-container">
       
         <div id="meme-wrapper">
-          <img width="600" class="moviePoster" src="/assets/keanu_logo.png" />
+          <img width="600" class="moviePoster max-h-full" src="/assets/keanu_logo.png" />
           
         </div>
             <h2 id="random-caption"></h2>
